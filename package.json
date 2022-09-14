@@ -1,0 +1,26 @@
+{
+  "name": "neoenv",
+  "version": "0.0.0",
+  "description": "🔐 Hassle free, clean, typed and safe environment variables management for modern developers 🔥 Say goodbye to dotenv, level up your env using neoenv with more advanced powers and features 🚀",
+  "author": {
+    "name": "Niloy Sikdar",
+    "email": "niloysikdar30@gmail.com",
+    "url": "https://github.com/niloysikdar"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niloysikdar/neoenv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/niloysikdar/neoenv/issues"
+  },
+  "homepage": "https://github.com/niloysikdar/neoenv#readme",
+  "readme": "https://github.com/niloysikdar/neoenv#readme",
+  "license": "",
+  "main": "",
+  "module": "",
+  "types": "",
+  "files": [],
+  "scripts": {},
+  "keywords": []
+}
