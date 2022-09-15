@@ -16,11 +16,27 @@
   },
   "homepage": "https://github.com/niloysikdar/neoenv#readme",
   "readme": "https://github.com/niloysikdar/neoenv#readme",
-  "license": "",
+  "license": "MIT",
   "main": "",
   "module": "",
   "types": "",
   "files": [],
-  "scripts": {},
+  "scripts": {
+    "build:esm": "tsc -p tsconfig.json",
+    "lint": "eslint src/**",
+    "lint:fix": "eslint --fix src/**",
+    "pretty": "prettier --check .",
+    "pretty:fix": "prettier --write ."
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.18",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.3"
+  },
   "keywords": []
 }
