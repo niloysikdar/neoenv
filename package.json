@@ -23,6 +23,10 @@
   "files": [],
   "scripts": {
     "watch": "tsc --watch",
+    "build": "rm -rf dist && yarn build:esm && yarn build:cjs && yarn fixup",
+    "build:esm": "tsc -p tsconfig.json",
+    "build:cjs": "tsc -p tsconfig.json --module commonjs --outDir dist/cjs --target es5",
+    "fixup": "chmod u+rx ./fixup.sh && ./fixup.sh",
     "lint": "eslint src/**",
     "lint:fix": "eslint --fix src/**",
     "pretty": "prettier --check .",
