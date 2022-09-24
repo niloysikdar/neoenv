@@ -32,7 +32,8 @@
     "lint:fix": "eslint --fix src/**",
     "pretty": "prettier --check .",
     "pretty:fix": "prettier --write .",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "commitlint": "commitlint"
   },
   "lint-staged": {
     "src/**": [
@@ -43,6 +44,8 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@types/node": "^18.7.18",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
