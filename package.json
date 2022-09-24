@@ -22,6 +22,7 @@
   "types": "",
   "files": [],
   "scripts": {
+    "prepare": "husky install",
     "watch": "tsc --watch",
     "build": "rm -rf dist && yarn build:esm && yarn build:cjs && yarn fixup",
     "build:esm": "tsc -p tsconfig.json",
@@ -48,6 +49,7 @@
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "typescript": "^4.8.3"
