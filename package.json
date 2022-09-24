@@ -33,7 +33,8 @@
     "pretty": "prettier --check .",
     "pretty:fix": "prettier --write .",
     "lint-staged": "lint-staged",
-    "commitlint": "commitlint"
+    "commitlint": "commitlint",
+    "cm": "cz -s"
   },
   "lint-staged": {
     "src/**": [
@@ -43,12 +44,18 @@
       "yarn lint"
     ]
   },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
     "@types/node": "^18.7.18",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
+    "cz-conventional-changelog": "3.3.0",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
