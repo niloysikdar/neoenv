@@ -23,6 +23,7 @@
   "files": [
     "dist"
   ],
+  "bin": "dist/cjs/generate.js",
   "scripts": {
     "prepare": "husky install",
     "watch": "tsc --watch",
