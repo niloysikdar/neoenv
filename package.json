@@ -17,10 +17,12 @@
   "homepage": "https://github.com/niloysikdar/neoenv#readme",
   "readme": "https://github.com/niloysikdar/neoenv#readme",
   "license": "MIT",
-  "main": "",
-  "module": "",
-  "types": "",
-  "files": [],
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepare": "husky install",
     "watch": "tsc --watch",
