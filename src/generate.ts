@@ -3,7 +3,7 @@
 import { join, resolve } from 'path';
 import { homedir } from 'os';
 import { readFileSync, writeFileSync } from 'fs';
-import { esmAndTsDefault } from './templates';
+import { esmAndTsDefault, esmAndTsDefaultWithPath } from './templates';
 import { parseData } from './parse';
 
 type Args = { [key: string]: string | boolean };
@@ -67,7 +67,11 @@ function _generate({
         envConfig + `  ${finalKey}: process.env.${finalKey} as string,\n`;
     }
 
-    finalConfig = esmAndTsDefault + envConfig + '};\n';
+    const defaultTemplate = path
+      ? esmAndTsDefaultWithPath({ path, encoding })
+      : esmAndTsDefault;
+
+    finalConfig = defaultTemplate + envConfig + '};\n';
   } else if (js) {
     console.log(esm, cjs);
   }
