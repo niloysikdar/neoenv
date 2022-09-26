@@ -3,8 +3,13 @@
 import { join, resolve } from 'path';
 import { homedir } from 'os';
 import { readFileSync, writeFileSync } from 'fs';
-import { esmAndTsDefault, esmAndTsDefaultWithPath } from './templates';
 import { parseData } from './parse';
+import {
+  esmAndTsDefault,
+  esmAndTsDefaultWithPath,
+  cjsDefault,
+  cjsDefaultWithPath,
+} from './templates';
 
 type Args = { [key: string]: string | boolean };
 
@@ -43,7 +48,6 @@ function _generate({
   ts,
   js,
   esm,
-  cjs,
   debug = false,
 }: ArgsSchema) {
   const dotenvPath = path ? _resolveHome(path) : resolve(process.cwd(), '.env');
@@ -73,7 +77,22 @@ function _generate({
 
     finalConfig = defaultTemplate + envConfig + '};\n';
   } else if (js) {
-    console.log(esm, cjs);
+    for (const finalKey in parsedData) {
+      debug && console.log(`Generating for: ${finalKey}`);
+      envConfig = envConfig + `  ${finalKey}: process.env.${finalKey},\n`;
+    }
+
+    if (esm) {
+      finalConfig =
+        (path ? esmAndTsDefaultWithPath({ path, encoding }) : esmAndTsDefault) +
+        envConfig +
+        '};\n';
+    } else {
+      finalConfig =
+        (path ? cjsDefaultWithPath({ path, encoding }) : cjsDefault) +
+        envConfig +
+        '};\n';
+    }
   }
 
   writeFileSync(outPath, finalConfig);
