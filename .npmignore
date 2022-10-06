@@ -1,0 +1,15 @@
+.husky/
+src/
+example/
+spec/
+.editorconfig
+.eslintignore
+.eslintrc
+.gitignore
+.prettierignore
+.prettierrc
+commitlint.config.ts
+LICENSE
+postbuild.sh
+tsconfig.json
+yarn.lock

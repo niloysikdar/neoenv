@@ -31,6 +31,7 @@
     "build:esm": "tsc -p tsconfig.json",
     "build:cjs": "tsc -p tsconfig.json --module commonjs --outDir dist/cjs --target es5",
     "postbuild": "chmod u+rx ./postbuild.sh && ./postbuild.sh",
+    "release": "semantic-release --branches main",
     "lint": "eslint src/**",
     "lint:fix": "eslint --fix src/**",
     "pretty": "prettier --check .",
@@ -55,16 +56,19 @@
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
     "@types/node": "^18.7.18",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
-    "cz-conventional-changelog": "3.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
+    "semantic-release": "^19.0.5",
     "typescript": "^4.8.3"
   },
   "keywords": []
