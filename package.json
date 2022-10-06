@@ -1,6 +1,6 @@
 {
   "name": "neoenv",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "🔐 Hassle-free, clean, typed and safe management of environment variables for modern developers 🔥 Supercharge your .env using neoenv with more advanced controls and powers ☄️🚀",
   "author": {
     "name": "Niloy Sikdar",
