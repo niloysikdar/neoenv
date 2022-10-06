@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import { join, resolve } from 'path';
 import { homedir } from 'os';
 import { readFileSync, writeFileSync } from 'fs';
