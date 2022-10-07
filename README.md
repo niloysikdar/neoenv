@@ -139,10 +139,10 @@ import { register } from 'neoenv';
 register();
 
 export const envConfig = {
-  MONGODB_URI: process.env.MONGODB_URI as string,
-  GITHUB_CLIENT_ID: process.env.GITHUB_CLIENT_ID as string,
-  CLOUDINARY_API_KEY: process.env.CLOUDINARY_API_KEY as string,
-  JWT_SECRET: process.env.JWT_SECRET as string,
+  MONGODB_URI: String(process.env.MONGODB_URI),
+  GITHUB_CLIENT_ID: String(process.env.GITHUB_CLIENT_ID),
+  CLOUDINARY_API_KEY: String(process.env.CLOUDINARY_API_KEY),
+  JWT_SECRET: String(process.env.JWT_SECRET),
 };
 ```
 

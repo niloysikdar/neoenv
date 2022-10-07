@@ -66,7 +66,7 @@ function _generate({
     for (const finalKey in parsedData) {
       debug && console.log(`Generating for: ${finalKey}`);
       envConfig =
-        envConfig + `  ${finalKey}: process.env.${finalKey} as string,\n`;
+        envConfig + `  ${finalKey}: String(process.env.${finalKey}),\n`;
     }
 
     const defaultTemplate = path
