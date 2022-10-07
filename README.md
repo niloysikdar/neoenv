@@ -119,7 +119,7 @@ After installing `neoenv` as a dependency, add a script to your `package.json` f
 }
 ```
 
-This will generate an `env.config.ts` file in the root of your project. You can also use the `--js` flag to generate an `env.config.js` file.
+This will generate an `env.ts` file in the root of your project. You can also use the `--js` flag to generate an `env.js` file.
 
 ```json
 {
@@ -131,7 +131,7 @@ This will generate an `env.config.ts` file in the root of your project. You can 
 
 Neoenv follows `Singleton Design Pattern`. Now, you can import the `envConfig` object from the generated file and use it to access the environment variables across your whole application in a type-safe way with some nice IntelliSense and autocomplete. 🤩
 
-Your generated file (`env.config.ts`) will look something like this (depending on the keys you have in your `.env` file):
+Your generated file (`env.ts`) will look something like this (depending on the keys you have in your `.env` file):
 
 ```ts
 // Don't edit this generated file manually, it will be overwritten by neoenv

@@ -50,7 +50,7 @@ function _generate({
 }: ArgsSchema) {
   const dotenvPath = path ? _resolveHome(path) : resolve(process.cwd(), '.env');
 
-  const defaultOutFile = 'env.config.' + (ts ? 'ts' : 'js');
+  const defaultOutFile = 'env.' + (ts ? 'ts' : 'js');
 
   const outPath = out
     ? _resolveHome(out)
