@@ -7,15 +7,17 @@ It loads environment variables from a `.env` file into [`process.env`](https://n
 Now, you'll be able to access the environment variables based on your `.env` file in a type-safe way with some nice IntelliSense and autocomplete. 🤩
 And guess what? It supports both JavaScript and TypeScript. 🎉
 
+Check the [Configuration section](#configuration-options-and-flagsarguments) for more details on how to configure and use it according to your needs of the project. 🤓
+
 Find the npm package [here](https://www.npmjs.com/package/neoenv)
 
 <p>
   <a href="https://www.npmjs.com/package/neoenv"><img src="https://badge.fury.io/js/neoenv.svg" alt="npm version" /></a>
 </p>
 
-### Star the [GitHub repo](https://github.com/niloysikdar/neoenv) to keep the developer motivated 🥺✨
+#### Star the [GitHub repo](https://github.com/niloysikdar/neoenv) to keep the developer motivated 🥺✨
 
-### Why neoenv? 🤔
+## Why neoenv? 🤔
 
 <details>
 <summary><b>Problem</b></summary>
@@ -24,9 +26,9 @@ First, let us discuss the problem which we're currently having. 🤔
 
 We use environment variables to store sensitive information like API keys, secrets, etc. which we don't want to commit to the repository. 🤫 That's why we use a `.env` file to store these variables and load them into `process.env`. Generally, we use the [`dotenv`](https://www.npmjs.com/package/dotenv) package to load the environment variables from the `.env` file. 📦 And we use the `process.env` object to access the variables.
 
-> `📝` A big thanks to [motdotla](https://github.com/motdotla) for creating [dotenv](https://www.npmjs.com/package/dotenv)
+> `📝` A big thanks to [Scott Motte](https://github.com/motdotla) for creating [dotenv](https://www.npmjs.com/package/dotenv)
 
-**Now that's all good for a general use case. But there are some problems with this approach!**
+**Now that's all good for a general and simple use case. But there are some problems with this approach!**
 
 We don't get any IntelliSense or autocomplete based on the keys already available inside the `.env` file (even in TypeScript). We have to type the keys to access the variables manually. Because that's how it works, it injects the keys and values from the `.env` to `process.env` only after calling some specific function (for `dotenv`, it is `config()`) during runtime.
 
