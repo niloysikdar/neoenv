@@ -43,14 +43,13 @@ function _generate({
   path,
   encoding = 'utf8',
   out,
-  ts,
   js,
   esm,
   debug = false,
 }: ArgsSchema) {
   const dotenvPath = path ? _resolveHome(path) : resolve(process.cwd(), '.env');
 
-  const defaultOutFile = 'env.' + (ts ? 'ts' : 'js');
+  const defaultOutFile = 'env.' + (js ? 'js' : 'ts');
 
   const outPath = out
     ? _resolveHome(out)
@@ -62,19 +61,7 @@ function _generate({
   let envConfig = '';
   let finalConfig = '';
 
-  if (ts) {
-    for (const finalKey in parsedData) {
-      debug && console.log(`Generating for: ${finalKey}`);
-      envConfig =
-        envConfig + `  ${finalKey}: String(process.env.${finalKey}),\n`;
-    }
-
-    const defaultTemplate = path
-      ? esmAndTsDefaultWithPath({ path, encoding })
-      : esmAndTsDefault;
-
-    finalConfig = defaultTemplate + envConfig + '};\n';
-  } else if (js) {
+  if (js) {
     for (const finalKey in parsedData) {
       debug && console.log(`Generating for: ${finalKey}`);
       envConfig = envConfig + `  ${finalKey}: process.env.${finalKey},\n`;
@@ -91,6 +78,18 @@ function _generate({
         envConfig +
         '};\n';
     }
+  } else {
+    for (const finalKey in parsedData) {
+      debug && console.log(`Generating for: ${finalKey}`);
+      envConfig =
+        envConfig + `  ${finalKey}: String(process.env.${finalKey}),\n`;
+    }
+
+    const defaultTemplate = path
+      ? esmAndTsDefaultWithPath({ path, encoding })
+      : esmAndTsDefault;
+
+    finalConfig = defaultTemplate + envConfig + '};\n';
   }
 
   writeFileSync(outPath, finalConfig);
