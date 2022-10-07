@@ -9,6 +9,19 @@ import {
   cjsDefaultWithPath,
 } from './templates';
 
+enum AllowedArgs {
+  'path',
+  'encoding',
+  'out',
+  'ts',
+  'js',
+  'esm',
+  'cjs',
+  'debug',
+}
+
+type AllowedArgsAsUnion = keyof typeof AllowedArgs;
+
 type Args = { [key: string]: string | boolean };
 
 type ArgsSchema = {
@@ -27,10 +40,18 @@ function _getArgs(): ArgsSchema {
 
   const initial: Args = {};
 
-  return args.reduce((acc: Args, arg: string) => {
-    const [key, value] = arg.split('=');
-    const newKey = key.replace(/[-]/g, '');
-    acc[newKey] = value || true;
+  return args.reduce((acc: Args, arg: string, i: number) => {
+    const key = arg.replace(/^-+/, '') as AllowedArgsAsUnion;
+
+    if (key in AllowedArgs) {
+      if (key === 'path' || key === 'encoding' || key === 'out') {
+        const nextArg = args[i + 1].replace(/["'`]/g, '');
+        acc[key] = nextArg;
+      } else {
+        acc[key] = true;
+      }
+    }
+
     return acc;
   }, initial);
 }
@@ -63,7 +84,7 @@ function _generate({
 
   if (js) {
     for (const finalKey in parsedData) {
-      debug && console.log(`Generating for: ${finalKey}`);
+      debug && console.log(`[JS] Generating for key: ${finalKey}`);
       envConfig = envConfig + `  ${finalKey}: process.env.${finalKey},\n`;
     }
 
@@ -80,7 +101,7 @@ function _generate({
     }
   } else {
     for (const finalKey in parsedData) {
-      debug && console.log(`Generating for: ${finalKey}`);
+      debug && console.log(`[TS] Generating for key: ${finalKey}`);
       envConfig =
         envConfig + `  ${finalKey}: String(process.env.${finalKey}),\n`;
     }
