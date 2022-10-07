@@ -1,3 +1,17 @@
+## [1.0.2](https://github.com/niloysikdar/neoenv/compare/v1.0.1...v1.0.2) (2022-10-07)
+
+
+### Bug Fixes
+
+* **args:** change the syntax from = to another arg ([9e43cc5](https://github.com/niloysikdar/neoenv/commit/9e43cc5096747c7d75a04aee675ada0958720beb))
+* **generate:** default out env.config.ts > env.ts ([81c8d3c](https://github.com/niloysikdar/neoenv/commit/81c8d3c19474161522e5b9c75b118d16a96705d6))
+* **generate:** fix the default generated file type to ts ([d4ed4de](https://github.com/niloysikdar/neoenv/commit/d4ed4de83b7dbb6363d83effc0052ed9f01ce7c1))
+
+
+### Performance Improvements
+
+* **generate:** change the typecasting syntax for ts ([f6ad257](https://github.com/niloysikdar/neoenv/commit/f6ad257dce84fa5f09a281357ee2bbb0cac57e4e))
+
 ## [1.0.1](https://github.com/niloysikdar/neoenv/compare/v1.0.0...v1.0.1) (2022-10-07)
 
 # 1.0.0 (2022-10-06)
