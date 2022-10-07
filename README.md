@@ -132,6 +132,7 @@ Neoenv follows `Singleton Design Pattern`. Now, you can import the `envConfig` o
 Your generated file (`env.config.ts`) will look something like this (depending on the keys you have in your `.env` file):
 
 ```ts
+// Don't edit this generated file manually, it will be overwritten by neoenv
 import { register } from 'neoenv';
 register();
 
@@ -181,6 +182,126 @@ or
 
 > **Note:** If you're using [nodemon](https://www.npmjs.com/package/nodemon) to run your application in development mode or using normal `node` (ex: `node index.js` or `node server.js`) with `start` command, you need to stop and restart the server after doing some changes in the `.env` file so that neoenv can load those new changes and generate the updated config file automatically.
 
+## Configuration, Options, and Flags/Arguments
+
+You can configure `neoenv` by passing the options/flags/arguments to the `neoenv` command.
+
+#### `--ts` or `-ts` or `ts`
+
+Specifis that you're using TypeScript for the project and the generated config file should be in TypeScript.
+
+```json
+{
+  "scripts": {
+    "gen:env": "neoenv --ts"
+  }
+}
+```
+
+#### `--js` or `-js` or `js`
+
+Specifis that you're using JavaScript for the project and the generated config file should be in JavaScript.
+
+```json
+{
+  "scripts": {
+    "gen:env": "neoenv --js"
+  }
+}
+```
+
+> **Note:** If you don't specify the `--ts` or `--js` flag, `neoenv` will generate the config file in TypeScript by default.
+
+#### `--esm` or `-esm` or `esm`
+
+Specifis that you're using ECMAScript Module (import/export) or ESM syntax for the project and the generated config file should be in ECMAScript Module (import/export) syntax.
+
+**Note:** This flag is only applicable if you're using JavaScript for the project.
+
+```json
+{
+  "scripts": {
+    "gen:env": "neoenv --js --esm"
+  }
+}
+```
+
+#### `--cjs` or `-cjs` or `cjs`
+
+Specifis that you're using CommonJS Module (require/module.exports) or CJS syntax for the project and the generated config file should be in CommonJS Module (require/module.exports) syntax.
+
+**Note:** This flag is only applicable if you're using JavaScript for the project.
+
+```json
+{
+  "scripts": {
+    "gen:env": "neoenv --js --cjs"
+  }
+}
+```
+
+> **Note:** If you don't specify the `--esm` or `--cjs` flag while using JavaScript with the `--js` flag, `neoenv` will generate the config file in CommonJS Module (require/module.exports) syntax by default. Also the `--esm` and `--cjs` flags won't work if you're using TypeScript with the `--ts` flag.
+
+#### `--encoding` or `-encoding` or `encoding`
+
+Optional flag to specify the encoding of the `.env` file. By default, `neoenv` will use `utf8` encoding.
+
+```json
+{
+  "scripts": {
+    "gen:env": "neoenv --encoding utf8"
+  }
+}
+```
+
+#### `--path` or `-path` or `path`
+
+You can specify the path of the `.env` file using the optional `--path` or `-path` or `path` flag/argument. By default, `neoenv` will look for the `.env` file in the root of the project.
+
+```json
+{
+  "scripts": {
+    "gen:env": "neoenv --path .env.local"
+  }
+}
+```
+
+#### `--out` or `-out` or `out`
+
+You can specify the path of the generated config file using the optional `--out` or `-out` or `out` flag/argument. By default, `neoenv` will generate the config file in the root of the project and the file name will be `env.ts` or `env.js` depending on the language you're using.
+
+```json
+{
+  "scripts": {
+    "gen:env": "neoenv --ts --out src/config/env.config.ts"
+  }
+}
+```
+
+> **Note:** If you want to generate the config file in a different directory other than the root of the project, you need to specify the `--out` flag/argument with the full path of the generated config file and the directory should already exist that means you need to create the directory first and then run the `neoenv` command.
+
+#### `--debug` or `-debug` or `debug`
+
+If you want to see the logs in the console, you can enable the debug mode using the optional `--debug` or `-debug` or `debug` flag/argument. By default, `neoenv` will not log anything in the console.
+
+```json
+{
+  "scripts": {
+    "gen:env": "neoenv --debug"
+  }
+}
+```
+
+So an overall example of the `neoenv` command with all the flags/arguments will look like this:
+
+```json
+{
+  "scripts": {
+    "gen:env": "neoenv --js --esm --encoding utf8 --path .env.local --out src/config/env.config.ts --debug"
+  }
+}
+```
+
 ## Bugs and Features
 
 See the [issues](https://github.com/niloysikdar/neoenv/issues) for a list of proposed features (and known issues). Feel free to raise new issues.
@@ -197,3 +318,6 @@ Distributed under the Apache-2.0 License. See [LICENSE](https://github.com/niloy
 - [GitHub](https://github.com/niloysikdar)
 - [Twitter](https://twitter.com/niloysikdar_)
 - [LinkedIn](https://www.linkedin.com/in/niloysikdar)
+
+I hope you liked this package and found it useful. Star the [GitHub repo](https://github.com/niloysikdar/neoenv) if you liked it 🙏
+Feel free to open an issue or create a pull request if you have any questions, suggestions or feedback. 🙌
