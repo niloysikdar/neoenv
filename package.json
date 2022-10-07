@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/niloysikdar/neoenv.git"
+    "url": "https://github.com/niloysikdar/neoenv.git"
   },
   "bugs": {
     "url": "https://github.com/niloysikdar/neoenv/issues"
@@ -71,5 +71,20 @@
     "semantic-release": "^19.0.5",
     "typescript": "^4.8.3"
   },
-  "keywords": []
+  "keywords": [
+    "neoenv",
+    "env",
+    ".env",
+    "dotenv",
+    "environment",
+    "variables",
+    "config",
+    "settings",
+    "node",
+    "typescript",
+    "javascript",
+    "autocomplete",
+    "intellisense",
+    "code completion"
+  ]
 }
