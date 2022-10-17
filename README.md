@@ -138,12 +138,12 @@ Your generated file (`env.ts`) will look something like this (depending on the k
 import { register } from 'neoenv';
 register();
 
-export const envConfig = {
+export const envConfig = Object.freeze({
   MONGODB_URI: String(process.env.MONGODB_URI),
   GITHUB_CLIENT_ID: String(process.env.GITHUB_CLIENT_ID),
   CLOUDINARY_API_KEY: String(process.env.CLOUDINARY_API_KEY),
   JWT_SECRET: String(process.env.JWT_SECRET),
-};
+});
 ```
 
 Neoenv will handle everything from loading the environment variables from the `.env` file to generating the configuration object based on the keys available in the `.env` file automatically so that you don't have to do anything manually with copy-paste and you can safely focus on building your application. 🚀
