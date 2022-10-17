@@ -92,12 +92,12 @@ function _generate({
       finalConfig =
         (path ? esmAndTsDefaultWithPath({ path, encoding }) : esmAndTsDefault) +
         envConfig +
-        '};\n';
+        '});\n';
     } else {
       finalConfig =
         (path ? cjsDefaultWithPath({ path, encoding }) : cjsDefault) +
         envConfig +
-        '};\n';
+        '});\n';
     }
   } else {
     for (const finalKey in parsedData) {
@@ -110,7 +110,7 @@ function _generate({
       ? esmAndTsDefaultWithPath({ path, encoding })
       : esmAndTsDefault;
 
-    finalConfig = defaultTemplate + envConfig + '};\n';
+    finalConfig = defaultTemplate + envConfig + '});\n';
   }
 
   writeFileSync(outPath, finalConfig);
