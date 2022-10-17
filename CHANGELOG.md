@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/niloysikdar/neoenv/compare/v1.0.2...v1.1.0) (2022-10-17)
+
+
+### Features
+
+* **generate:** immutable config object ([#2](https://github.com/niloysikdar/neoenv/issues/2)) ([21ba82c](https://github.com/niloysikdar/neoenv/commit/21ba82c3cbd9e1377f68b8fffac26832fb42b4b4)), closes [#1](https://github.com/niloysikdar/neoenv/issues/1)
+
 ## [1.0.2](https://github.com/niloysikdar/neoenv/compare/v1.0.1...v1.0.2) (2022-10-07)
 
 
