@@ -23,13 +23,7 @@
       }
     ],
     "@semantic-release/npm",
-    [
-      "@semantic-release/github",
-      {
-        "successComment": "🎉 This PR is included in version ${nextRelease.version} 🎉",
-        "addReleases": "bottom"
-      }
-    ],
+    "@semantic-release/github",
     [
       "@semantic-release/git",
       {
