@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/niloysikdar/neoenv/compare/v1.1.1...v1.2.0) (2022-10-19)
+
+
+### Features
+
+* **generate:** add colors with the console.log ([23ef6cf](https://github.com/niloysikdar/neoenv/commit/23ef6cffbd366cdbc78d40f4b5f1a79309fb854a)), closes [#3](https://github.com/niloysikdar/neoenv/issues/3)
+
 ## [1.1.1](https://github.com/niloysikdar/neoenv/compare/v1.1.0...v1.1.1) (2022-10-17)
 
 # [1.1.0](https://github.com/niloysikdar/neoenv/compare/v1.0.2...v1.1.0) (2022-10-17)
