@@ -35,6 +35,12 @@ type ArgsSchema = {
   debug?: boolean;
 };
 
+const Colors = {
+  Reset: '\x1b[0m',
+  FgYellow: '\x1b[33m',
+  FgGreen: '\x1b[32m',
+};
+
 function _getArgs(): ArgsSchema {
   const args: string[] = process.argv.slice(2);
 
@@ -84,7 +90,12 @@ function _generate({
 
   if (js) {
     for (const finalKey in parsedData) {
-      debug && console.log(`[JS] Generating for key: ${finalKey}`);
+      debug &&
+        console.log(
+          Colors.FgYellow,
+          `[JS] Generating for key: ${finalKey}`,
+          Colors.Reset,
+        );
       envConfig = envConfig + `  ${finalKey}: process.env.${finalKey},\n`;
     }
 
@@ -101,7 +112,12 @@ function _generate({
     }
   } else {
     for (const finalKey in parsedData) {
-      debug && console.log(`[TS] Generating for key: ${finalKey}`);
+      debug &&
+        console.log(
+          Colors.FgYellow,
+          `[TS] Generating for key: ${finalKey}`,
+          Colors.Reset,
+        );
       envConfig =
         envConfig + `  ${finalKey}: String(process.env.${finalKey}),\n`;
     }
@@ -116,7 +132,9 @@ function _generate({
   writeFileSync(outPath, finalConfig);
   debug &&
     console.log(
+      Colors.FgGreen,
       `${out ? out : defaultOutFile} has been generated successfully`,
+      Colors.Reset,
     );
 }
 
