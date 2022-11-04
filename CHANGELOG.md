@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/niloysikdar/neoenv/compare/v1.2.0...v1.3.0) (2022-11-04)
+
+
+### Features
+
+* **build:** use esbuild instead of tsc ([d9a17c0](https://github.com/niloysikdar/neoenv/commit/d9a17c08882e0190eeeaff59ba87f0a7a1090812)), closes [#4](https://github.com/niloysikdar/neoenv/issues/4)
+
 # [1.2.0](https://github.com/niloysikdar/neoenv/compare/v1.1.1...v1.2.0) (2022-10-19)
 
 
