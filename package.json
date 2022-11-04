@@ -19,7 +19,7 @@
   "license": "Apache-2.0",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
-  "types": "dist/esm/index.d.ts",
+  "types": "dist/types/index.d.ts",
   "files": [
     "dist"
   ],
@@ -27,9 +27,8 @@
   "scripts": {
     "prepare": "husky install",
     "watch": "tsc --watch",
-    "build": "rm -rf dist && yarn build:esm && yarn build:cjs",
-    "build:esm": "tsc -p tsconfig.json",
-    "build:cjs": "tsc -p tsconfig.json --module commonjs --outDir dist/cjs --target es5",
+    "ts-types": " tsc --emitDeclarationOnly --outDir dist/types",
+    "build": "rm -rf dist && yarn ts-types && node build.js",
     "postbuild": "chmod u+rx ./postbuild.sh && ./postbuild.sh",
     "release": "semantic-release --branches main",
     "lint": "eslint src/**",
@@ -62,6 +61,7 @@
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
     "cz-conventional-changelog": "^3.3.0",
+    "esbuild": "^0.15.13",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
