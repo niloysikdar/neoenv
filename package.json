@@ -16,7 +16,7 @@
   },
   "homepage": "https://github.com/niloysikdar/neoenv#readme",
   "readme": "https://github.com/niloysikdar/neoenv#readme",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
