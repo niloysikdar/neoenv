@@ -2,6 +2,7 @@
 src/
 example/
 spec/
+docs/
 .editorconfig
 .eslintignore
 .eslintrc
