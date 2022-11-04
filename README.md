@@ -310,7 +310,7 @@ See the [issues](https://github.com/niloysikdar/neoenv/issues) for a list of pro
 
 ## License
 
-Distributed under the Apache-2.0 License. See [LICENSE](https://github.com/niloysikdar/neoenv/blob/main/LICENSE) for more information.
+Distributed under the MIT License. See [LICENSE](https://github.com/niloysikdar/neoenv/blob/main/LICENSE) for more information.
 
 ## Author
 
